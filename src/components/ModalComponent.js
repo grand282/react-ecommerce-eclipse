@@ -9,17 +9,18 @@ function ModalComponent({productsCount}) {
   const cart = useContext(CartContext);
 
     const style = {
-        position: 'absolute',
-        top: '30%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 600,
-        bgcolor: 'darkgrey',
-        color: 'black',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4
-      };
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '90%',
+    maxWidth: '600px',
+    bgcolor: 'darkgrey',
+    color: 'black',
+    border: '2px solid #000',
+    boxShadow: '24px',
+    p: 4
+  };
      
   return (
     <div>
