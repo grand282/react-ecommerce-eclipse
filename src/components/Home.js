@@ -11,6 +11,7 @@ function Home() {
   
   return (
     <div >
+      <Box width="100vw">
       <Box>
       <img src={Logo} width="100%" height="400px" alt="cool site"/>
       </Box>
@@ -20,7 +21,7 @@ function Home() {
       <Box className='clothing' bgcolor="#202020" pb="20px" >
         <Container>
           <Typography color="whitesmoke" variant='h2'>Clothing</Typography>
-          <Grid pt='20px' container rowSpacing={2}  columns={{ xs: 1, sm: 1, md: 4 }}>
+          <Grid pt='20px' gap={4} container rowSpacing={2}  columns={{ xs: 1, sm: 1, md: 4 }}>
             {productsArray.map((product, idx) =>(
               product.id1 < 12 &&
               <CardForm product={product} idx={idx}/>
@@ -37,7 +38,7 @@ function Home() {
       <Box className='tech' bgcolor="#202020" pb="20px" >
         <Container>
           <Typography color="whitesmoke" variant='h2'>Tech Gadgets</Typography>
-         <Grid pt='20px' container rowSpacing={2} spacing={3} columns={{ xs: 2, sm: 3, md: 4 }}>
+         <Grid pt='20px' gap={4} container rowSpacing={2} spacing={3} columns={{ xs: 2, sm: 3, md: 4 }}>
          {productsArray.map((product, idx) =>(
               product.id1 < 25 && product.id1 >= 12 &&
               <CardForm product={product} idx={idx}/>
@@ -54,14 +55,15 @@ function Home() {
       <Box id='acess' bgcolor="#696969" pb="20px" >
         <Container>
           <Typography color="darkred" variant='h2'>Accessories</Typography>
-          <Grid pt='20px' container rowSpacing={1} bgcolor="gray"  columns={{ xs: 2, sm: 3, md: 4 }}>
+          <Grid pt='20px' gap={4} container rowSpacing={1} bgcolor="gray"  columns={{ xs: 2, sm: 3, md: 4 }}>
           {productsArray.map((product, idx) =>(
              product.id1 < 32 && product.id1 >= 25 &&
              <CardForm product={product} idx={idx}/>
             ))}
          </Grid>
         </Container>
-      </Box>   
+      </Box>  
+      </Box> 
     </div>
   )
 }

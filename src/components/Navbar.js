@@ -26,7 +26,7 @@ function Navbar() {
 
   return (
     <div>
-    <Box bgcolor="darkgrey">
+    <Box width="100%" bgcolor="darkgrey">
         <Container bgcolor="darkgrey">
         <Stack
          justifyContent="space-between"
@@ -94,44 +94,43 @@ function Navbar() {
         </Container>
         <Box bgcolor="darkgrey">
         <Container>
-        <Grid pt='20px' container columns={12} rowSpacing={2} spacing={3} columnSpacing={{ xs: 1, sm: 2, md: 4}}>
+        <Grid pt='20px' gap={2} container columns={12} rowSpacing={2} spacing={3} columnSpacing={{ xs: 1, sm: 2, md: 4}}>
          
 
           {/** clothing search */}
          
           {productsArray.filter((product) => {
-            return search.length === 0 ?
-            null: product.title.toLowerCase().includes(search);
-          })
+           return search.length === 0 ? null : product.title.toLowerCase().includes(search.toLowerCase());
+           })
           .map((product,idx) => (
-            <Box>
-              <Card key={idx} sx={{ maxWidth: 345 }}>
-               <CardActionArea>
-               <CardMedia
-                 sx={{ height: 300 }}
-                  component="img"
-                  image={product.img}
+           <Box>
+           <Card key={idx} sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+                <CardMedia
+                    sx={{ height: 250, width: 250 }}
+                    component="img"
+                    image={product.img}
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {product.title}
-                  </Typography>
-                  <Typography>
-                    <Button variant='contained' >View</Button>
-                </Typography>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {product.title}
+                    </Typography>
+                    <Typography>
+                        <Button variant='contained' >View</Button>
+                    </Typography>
                 </CardContent>
-                <CardActions  >
-                  <Typography size="small">{product.price}</Typography>
-                  <Button  size="small" sx={{paddingLeft: "35px"}} >
-                  <AddShoppingCartIcon  />
-                            Add To Basket
-                   </Button>
-                   
+                <CardActions>
+                    <Typography size="small">{product.price}</Typography>
+                    <Button size="small" sx={{paddingLeft: "35px"}}>
+                        <AddShoppingCartIcon />
+                        Add To Basket
+                    </Button>
                 </CardActions>
-                 </CardActionArea>
-               </Card>
-            </Box>
-          ))}
+            </CardActionArea>
+           </Card>
+         </Box>
+         ))}
+
 
         
         </Grid>

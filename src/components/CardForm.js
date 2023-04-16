@@ -31,7 +31,7 @@ function CardForm({product, idx}) {
         </Modal>
       <Card key={idx} sx={{ maxWidth: 345 }}>
       <CardMedia
-        sx={{ height: 300 }}
+        sx={{ height: 300, width: 400 }}
         component="img"
         image={product.img}
         alt={product.title}
@@ -40,7 +40,7 @@ function CardForm({product, idx}) {
         <Typography gutterBottom variant="h5" component="div">
           {product.title}
         </Typography>
-        <Stack direction="row" justifyContent='space-between'>
+        <Stack direction={{ xs: 'column', sm: 'column', md: 'row' }} justifyContent='space-between'>
         <Typography>
           <Link style={{ textDecoration: 'none'}} to={`/singledetails/${product.id}`}><Button variant='contained'>View</Button></Link>
         </Typography>

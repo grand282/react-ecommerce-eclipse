@@ -18,8 +18,8 @@ function SingleProduct(props) {
 
     
   return (
-    <div>
-        <Box  bgcolor="darkgrey">
+    <div width="100vw">
+        <Box width="100vw" bgcolor="darkgrey">
             <Container>
                <Modal
                sx={{overflow: 'scroll'}}
@@ -30,14 +30,15 @@ function SingleProduct(props) {
                </Modal>
                 <Typography variant='h1' color="darkred">Product Details</Typography>
                 <Divider/>
+            
                 <Stack 
                 pb="30px" pt="45px"
                 direction={{ xs: 'column', sm: 'row' }}
-                spacing={{ xs: 1, sm: 2, md: 4 }}
+                spacing={{ xs: 1, sm: 2, md: 5 }}
                 justifyContent="space-between"
-                >
-                    
-                    <img width="600px" src={productData.img} alt='' />
+                >   
+                  <img width="90%" height="500px" src={productData.img} alt={productData.title} />
+        
                     <Box>
                         <Typography pt="20px" variant='h2'>{productData.title}</Typography>
                         <Typography pt="20px" variant='h3'>Description:</Typography>

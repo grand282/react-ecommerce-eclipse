@@ -10,8 +10,8 @@ function ModalComponent({productsCount}) {
 
     const style = {
         position: 'absolute',
-        top: '48%',
-        left: '80%',
+        top: '30%',
+        left: '50%',
         transform: 'translate(-50%, -50%)',
         width: 600,
         bgcolor: 'darkgrey',
@@ -20,6 +20,7 @@ function ModalComponent({productsCount}) {
         boxShadow: 24,
         p: 4
       };
+     
   return (
     <div>
         <Box>
@@ -37,12 +38,16 @@ function ModalComponent({productsCount}) {
 
                <Typography mt="25px" mb="10px" color="error">Total: {cart.getTotalCost().toFixed(2)}</Typography>
 
-               <Button variant='contained'>Buy</Button>
+               <form action="/create-checkout-session" method="POST">
+                <Button type="submit">
+                   Checkout
+                 </Button>
+               </form>
                
              </>
             :
             <Container>
-            <Typography color="black" mt="100px" ml='100px'>There are no items in the cart!</Typography>
+            <Typography color="error" mt="100px" ml='100px'>There are no items in the cart!</Typography>
             </Container>
             }
            </Box>

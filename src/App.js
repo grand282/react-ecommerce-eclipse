@@ -7,6 +7,7 @@ import SingleProduct from "./components/view/SingleProduct";
 import { CartProvider } from "./Context";
 import ModalComponent from "./components/ModalComponent";
 import ModalProducts from "./components/ModalProducts";
+import { Box } from "@mui/material";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
     <CartProvider>
     <div className="App">
+      <Box width="100vw">
       <Router>
       <Navbar />
         <Routes>
@@ -27,6 +29,7 @@ function App() {
         </Routes>
       </Router>
       <Footer />
+      </Box>
     </div>
     </CartProvider>
   );
