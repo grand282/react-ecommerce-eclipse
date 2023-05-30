@@ -4,7 +4,7 @@ const Footer = () => {
     const date = new Date();
     const fullYear = date.getFullYear();
     return (
-      <footer  className="footer">
+      <footer style={{width: '100%',height: '100%'}} className="footer">
 
         <Box  bgcolor='#202020' sx={{
             height: '100px'

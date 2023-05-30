@@ -18,8 +18,8 @@ function SingleProduct(props) {
 
     
   return (
-    <div width="100vw">
-        <Box width="100vw" bgcolor="darkgrey">
+    <div>
+        <Box sx={{width: '100%',height: '100%'}} bgcolor="darkgrey">
             <Container>
                <Modal
                sx={{overflow: 'scroll'}}

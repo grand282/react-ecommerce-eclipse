@@ -24,36 +24,36 @@ function ModalComponent({productsCount}) {
      
   return (
     <div>
-        <Box>
-           <Box sx={style}>
-            <Typography pb="10px" variant='h1'>Shopping Cart</Typography>
-            <Divider/>
-             {productsCount > 0 ?
-             <>
-               <Typography>Items in your cart:</Typography>
-               {cart.items.map((currentProduct, idx) => (
-                <Box>
-                  <ModalProducts  key={idx} id={currentProduct.id} quantity={currentProduct.quantity} />
-                </Box>
-               ))}
+    <Box>
+       <Box sx={style}>
+        <Typography pb="10px" variant='h1'>Products</Typography>
+        <Divider/>
+         {productsCount > 0 ?
+         <>
+           <Typography>Cart:</Typography>
+           {cart.items.map((currentProduct, idx) => (
+            <Box>
+              <ModalProducts  key={idx} id={currentProduct.id} quantity={currentProduct.quantity} />
+            </Box>
+           ))}
 
-               <Typography mt="25px" mb="10px" color="error">Total: {cart.getTotalCost().toFixed(2)}</Typography>
+           <Typography mt="25px" mb="10px" color="error">Total: {cart.getTotalCost().toFixed(2)}</Typography>
 
-               <form action="/create-checkout-session" method="POST">
-                <Button type="submit">
-                   Checkout
-                 </Button>
-               </form>
-               
-             </>
-            :
-            <Container>
-            <Typography color="error" mt="100px" ml='100px'>There are no items in the cart!</Typography>
-            </Container>
-            }
-           </Box>
-        </Box>
-    </div>
+           <form action="/create-checkout-session" method="POST">
+            <Button type="submit">
+               Checkout
+             </Button>
+           </form>
+           
+         </>
+        :
+        <Container>
+        <Typography color="error" mt="100px" ml='100px'>There are no items in the cart!</Typography>
+        </Container>
+        }
+       </Box>
+    </Box>
+</div>
   )
 }
 

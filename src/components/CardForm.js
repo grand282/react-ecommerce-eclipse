@@ -11,7 +11,7 @@ import { useContext } from 'react';
 import {CartContext} from '../Context';
 import { Stack,Modal } from '@mui/material';
 import { useState } from 'react';
-
+import { motion } from "framer-motion";
 import ModalComponent from './ModalComponent';
 
 function CardForm({product, idx}) {
@@ -21,14 +21,15 @@ function CardForm({product, idx}) {
  const handleClose = () => setOpen(false);
  const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
   return (
-    <>
-       <Modal
+    <div>
+      <Modal 
         sx={{overflow: 'scroll'}}
         open={open}
         onClose={handleClose}
         >
         <ModalComponent productsCount={productsCount}/>
-        </Modal>
+      </Modal>
+      <motion.div whileHover={{ scale: 1.1 }}>
       <Card key={idx} sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 300, width: 400 }}
@@ -60,8 +61,9 @@ function CardForm({product, idx}) {
         </Stack>
       </CardActions>
     </Card>
+    </motion.div>
     
-    </>
+    </div>
   );
 }
 export default CardForm

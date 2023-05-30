@@ -11,8 +11,8 @@ function ModalProducts(props) {
     
 
   return (
-    <div>
-        <Box >
+    <div style={{width: '100%',height: '100%'}}>
+        <Box width="100" height="100%">
             <Stack
             alignItems="center"
             direction="row">
@@ -22,10 +22,16 @@ function ModalProducts(props) {
               <Box mb="30px" ml='110px'>
               <Typography pt="10px">Name: {productData.title}</Typography>
               <Typography pt="10px" color='error'>Quantity: {quantity}</Typography>
-              <Typography pt="10px" pb='10px'>Price: ${(quantity * productData.price).toFixed(2)}</Typography>
-              <Button variant='contained' onClick={()=> cart.addOneToCart(id)}>Add</Button>
+              <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={{ xs: 1, sm: 2, md: 4 }}
+              >
+               <Button variant='contained' onClick={()=> cart.addOneToCart(id)}>Add</Button>
               <Button variant='contained' sx={{marginLeft: "10px"}} onClick={()=> cart.removeOneToCart(id)}>Remove</Button>
               <Button sx={{marginLeft: "10px"}} variant='contained' onClick={()=> cart.deleteFromCart(id)}>Delete</Button>
+              </Stack>
+              <Typography pt="10px" pb='10px'>Price: ${(quantity * productData.price).toFixed(2)}</Typography>
+              
               </Box>
             </Stack>
         </Box>

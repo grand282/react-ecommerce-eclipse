@@ -25,13 +25,12 @@ function Navbar() {
   const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
 
   return (
-    <div>
-    <Box width="100%" bgcolor="darkgrey">
+    <Box sx={{height: '100%',width: '100%'}} bgcolor="darkgrey">
         <Container bgcolor="darkgrey">
         <Stack
          justifyContent="space-between"
          alignItems="center"
-         direction={{ xs: 'column', sm: 'row' }}
+         direction="row"
          spacing={{ xs: 1, sm: 2, md: 4 }} 
          > 
              <StorefrontIcon sx={{ color: 'darkred',fontSize: 40 }} />
@@ -53,7 +52,7 @@ function Navbar() {
                {/** modal */}
 
                <Modal
-               sx={{overflow: 'scroll'}}
+               sx={{overflowY: "auto"}}
                 open={open}
                 onClose={handleClose}
                >
@@ -130,15 +129,11 @@ function Navbar() {
            </Card>
          </Box>
          ))}
-
-
-        
         </Grid>
         </Container>
         </Box>
     </Box>
-    </div>
+   
   )
 }
-
 export default Navbar
